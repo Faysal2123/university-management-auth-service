@@ -1,16 +1,16 @@
-import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import prettier from "eslint-plugin-prettier";
+import js from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import prettier from 'eslint-plugin-prettier'
 
 export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
 
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
     },
 
     plugins: {
@@ -18,20 +18,20 @@ export default [
     },
 
     rules: {
-      "prettier/prettier": "error",
-      "no-console": "warn",
+      'prettier/prettier': 'error',
+      'no-console': 'warn',
 
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
         {
-          argsIgnorePattern: "^_",
-          varsIgnorePattern: "^_",
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
 
-      "@typescript-eslint/no-explicit-any": "warn",
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
 
-    ignores: ["node_modules", "dist"],
+    ignores: ['node_modules', 'dist'],
   },
-];
+]
