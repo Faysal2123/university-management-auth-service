@@ -20,6 +20,10 @@ export default [
     rules: {
       'prettier/prettier': 'error',
       'no-console': 'warn',
+      'no-undef': 'error',
+      'no-unused-expressions': 'error',
+      'no-unreached': 'error',
+      'consistent-type-definitions': ['error', 'interface'],
 
       '@typescript-eslint/no-unused-vars': [
         'warn',
