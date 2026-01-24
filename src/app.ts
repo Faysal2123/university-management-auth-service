@@ -1,16 +1,24 @@
-import express, { type Application, type Request, type Response } from 'express'
+import express, {
+  type Application,
+  type NextFunction,
+  type Request,
+  type Response,
+} from 'express'
 import cors from 'cors'
-import usersRouter from './app/modules/users/users.route.js'
+import { UserRoutes } from './app/modules/users/user.route.js'
+import globalErrorHandler from './middlewares/globalErrorHandler.js'
 
 const app: Application = express()
 
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use('/api/v1/users', UserRoutes)
 
-app.use('/api/v1/users/', usersRouter)
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!')
+app.get('/', (req: Request, res: Response, _next: NextFunction) => {
+  res.status(200).json({ message: 'Server is running successfully' })
 })
+
+app.use(globalErrorHandler)
 
 export default app
