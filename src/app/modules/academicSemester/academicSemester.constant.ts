@@ -1,0 +1,28 @@
+import type {
+  AcademicSemesterCode,
+  AcademicSemesterTitles,
+  IAcademicSemesterMonths,
+} from './academicSemester.interface.js'
+
+export const academicSemesterTitles: AcademicSemesterTitles[] = [
+  'Autumn',
+  'Summer',
+  'Fall',
+]
+
+export const academicSemesterCodes: AcademicSemesterCode[] = ['01', '02', '03']
+
+export const academicSemesterMonths: IAcademicSemesterMonths[] = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
